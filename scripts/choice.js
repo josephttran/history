@@ -1,6 +1,8 @@
 let score = 0;
 let isSubmitted = false;
+let questionNumber = 1;
 const numberOfQuestions = 10;
+const progress = document.querySelector('.progress');
 const multipleChoiceContainer = document.querySelector('.multiple-choice-container');
 const multipleChoiceQuestion = multipleChoiceContainer.querySelector('.multiple-choice-question');
 const multipleChoicePossibleAnswer = multipleChoiceContainer.querySelector('.multiple-choice-possible-answer');
@@ -25,6 +27,8 @@ async function getData() {
 }
 
 async function displayQuestionAndPossibleAnswer() {
+    displayProgress();
+
     let multipleData = await getData();
     let randomObject = getRandomObject(multipleData);;
 
@@ -52,6 +56,10 @@ async function displayQuestionAndPossibleAnswer() {
     }
 }
 
+function displayProgress() {
+    progress.textContent = `Question ${questionNumber} of ${numberOfQuestions}`;
+}
+
 multipleChoiceSubmitButton.addEventListener('click', async function() {
     if (!isSubmitted) {
         let multipleData = await getData();
@@ -75,7 +83,19 @@ multipleChoiceSubmitButton.addEventListener('click', async function() {
             }
 
             isSubmitted = true;
-            nextQuestionButton.style.display = 'block';
+
+            if (questionNumber === numberOfQuestions) {
+                const main = document.querySelector('main');
+                const result = document.createElement('p');
+
+                result.textContent = `Your total score is ${(score/numberOfQuestions).toFixed(2)}%`;
+                result.className = 'choice-result';
+                main.insertBefore(result, multipleChoiceSubmitButton);
+            } else {
+                nextQuestionButton.style.display = 'block';
+            }
+
+            questionNumber++;
         }
     }
 });
@@ -98,10 +118,12 @@ nextQuestionButton.addEventListener('click', function(e) {
 
 displayQuestionAndPossibleAnswer();
 
-// if (location.href.indexOf('/choice') !== -1) {
-//     window.addEventListener('beforeunload', function(e) {
-//         var confirmationMessage = "\o/";
-//         (e || window.event).returnValue = confirmationMessage;
-//         return confirmationMessage;
-//     });
-// }
+if (location.href.indexOf('/choice') !== -1) {
+    window.addEventListener('beforeunload', function(e) {
+        if (questionNumber <= numberOfQuestions) {
+            var confirmationMessage = "\o/";
+            (e || window.event).returnValue = confirmationMessage;
+            return confirmationMessage;
+        }
+    });
+}
