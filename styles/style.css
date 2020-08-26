@@ -1,0 +1,59 @@
+html, body, nav, main, section aside, ul, ol, li, a, p, h1, h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+}
+
+h1 {
+    margin: 0;
+    padding: 2rem 2rem;
+    background-color: lightgray;
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    height: calc(100vh - 8rem);
+    background-color: midnightblue;
+}
+
+main {
+    width: 100%;
+    margin: 2rem;
+}
+
+nav {
+    min-width: 240px;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin: 2rem 1rem;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+nav a:focus {
+    color: red;
+}
+
+.active {
+    color: red;
+}
+
+.main-heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.main-subheading {
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
