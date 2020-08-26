@@ -90,9 +90,10 @@ matchSubmitButton.addEventListener('click', async function() {
         const main = document.querySelector('main');
         const resultElement = document.createElement('p');
         const resultText = document.createTextNode(`Your score is ${numberCorrect}/10`);
-    
-        resultElement.append(resultText);
-        main.appendChild(resultText);
+
+        resultElement.className = 'result';
+        resultElement.appendChild(resultText);
+        main.insertBefore(resultElement, matchSubmitButton);
 
         submitted = true;
     }

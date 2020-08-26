@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matching Quiz</title>
+    <link rel="stylesheet" href="/styles/matching.css">
     <script src="/scripts/matching.js" defer></script>
 </head>
 <body>
-    <aside>
-        <header>
-            <h1>History</h1>
-        </header>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/choice.html">Multiple Choice Quiz</a>
-            <a href="/match.html">Matching Quiz</a>
-        </nav>
-    </aside>
-    <main>
-        <h2>Matching</h2>
-        <p>Match the statement with the correct answer.</p>
-        <section class="matching-statement">
-        </section>
-        <button class="match-submit">Submit</button>
-    </main>
+    <header>
+        <h1>History</h1>
+    </header>
+    <div class="container">
+        <aside>
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/choice.html">Multiple Choice Quiz</a>
+                <a href="/match.html" class="active">Matching Quiz</a>
+            </nav>
+        </aside>     
+        <main>
+            <h2 class="matching-statement-heading">Matching</h2>
+            <p class="matching-statement-subheading">Match the statement with the correct answer.</p>
+            <section class="matching-statement">
+            </section>
+            <button class="match-submit">Submit</button>
+        </main>        
+    </div>
 </body>
 </html>
