@@ -19,8 +19,12 @@
 }
 
 .multiple-choice-answer {
-    color: green;
+    margin: 2rem 0;
+    padding: 1rem;
     display: none;
+    background-color: lightgray;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .multiple-choice-submit-button {
