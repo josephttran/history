@@ -10,8 +10,16 @@ const multipleChoiceAnswer = multipleChoiceContainer.querySelector('.multiple-ch
 const multipleChoiceSubmitButton = document.querySelector('.multiple-choice-submit-button');
 const nextQuestionButton = document.querySelector('.next-question-button');
 
+let objectPicked = [];
 function getRandomObject(dataArr) {
-    const index = Math.floor(Math.random() * dataArr.length);
+    let index = Math.floor(Math.random() * dataArr.length);
+
+    while (objectPicked.indexOf(index) !== -1) {
+        index = Math.floor(Math.random() * dataArr.length);
+    }
+
+    objectPicked.push(index);
+
     return dataArr[index];
 }
 
@@ -30,7 +38,7 @@ async function displayQuestionAndPossibleAnswer() {
     displayProgress();
 
     let multipleData = await getData();
-    let randomObject = getRandomObject(multipleData);;
+    let randomObject = getRandomObject(multipleData);
 
     multipleChoiceQuestion.textContent = randomObject.question;
 
