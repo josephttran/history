@@ -28,5 +28,30 @@
 }
 
 .multiple-choice-submit-button {
-    margin-top: 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.multiple-choice-submit-button:hover {
+    background-color: #00A6FF;
+    color: white;
+}
+
+.next-question-button {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    height: 4rem;
+    display: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.next-question-button:hover {
+    background-color: #00A6FF;
+    color: white;
 }
