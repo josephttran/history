@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Choice Quiz</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/choice.css">
+    <script src="/scripts/choice.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,6 +23,12 @@
         <main>
             <h2 class="main-heading">Multiple Choice</h2>
             <p class="main-subheading">Choose the best answer.</p>
+            <section class="multiple-choice-container">
+                <h4 class="multiple-choice-question"></h4>
+                <div class="multiple-choice-possible-answer"></div>
+                <div class="multiple-choice-answer"></div>
+            </section>
+            <button class="multiple-choice-submit-button">Submit</button>
         </main>
     </div>
 </body>

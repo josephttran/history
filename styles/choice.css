@@ -1,0 +1,29 @@
+.multiple-choice-question {
+    font-size: 2rem;
+}
+
+.multiple-choice-possible-answer > p {
+    padding: 0.8rem;
+    font-size: 1.6rem;
+}
+
+.multiple-choice-possible-answer > p:hover {
+    padding: 0.8rem;
+    background-color: green;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.multiple-choice-possible-answer_active{
+    background-color: lightgreen;
+}
+
+.multiple-choice-answer {
+    color: green;
+    display: none;
+}
+
+.multiple-choice-submit-button {
+    margin-top: 2rem;
+}
