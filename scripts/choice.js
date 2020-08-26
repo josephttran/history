@@ -31,9 +31,21 @@ async function displayQuestionAndPossibleAnswer() {
     for (const key in randomObject.choice) {
         const possibleAnswerP = document.createElement('p');
         possibleAnswerP.textContent = `${key}) ${randomObject.choice[key]}`;
+        
+        possibleAnswerP.addEventListener('click', function(e) {
+            const multipleChoicePossibleAnswerP = multipleChoiceContainer.querySelectorAll('.multiple-choice-possible-answer p');
+            
+            multipleChoicePossibleAnswerP.forEach(pNode => {
+                if (pNode.classList.contains('multiple-choice-possible-answer_active')) {
+                    pNode.classList.remove('multiple-choice-possible-answer_active');
+                }
+            })
+
+            e.target.classList.add('multiple-choice-possible-answer_active');
+        });
+
         multipleChoicePossibleAnswer.appendChild(possibleAnswerP);   
     }
 }
 
 displayQuestionAndPossibleAnswer();
-
