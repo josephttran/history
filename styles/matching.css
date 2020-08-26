@@ -14,18 +14,21 @@ body {
     align-items: center;
 }
 
-li select {
+.matching-statement-choice {
     margin-left: 1rem;
     height: 2rem;
 }
 
-li p {
+.statement {
     margin-left: 1rem;
     font-size: 1.6rem;
 }
 
 .correct-answer {
-    color: red;
+    margin-left: 1rem;
+    background-color: #E3E3E3;
+    color: #8b0000;
+    font-size: 2rem;
 }
 
 .result {
@@ -39,14 +42,14 @@ li p {
     width: 100%;
     margin: auto 0;
     margin-top: 2rem;
-    background-color: #00A6FF;
+    background-color: #005A8A;
     color: white;
     font-size: 2rem;
-    border: 1px solid #00A6FF;
+    border: 1px solid #005A8A;
     border-radius: 20px;
     outline: none;
 }
 
 .match-submit:hover {
-    background-color: green;
+    background-color: #008000;
 }
