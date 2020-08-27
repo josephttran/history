@@ -96,7 +96,7 @@ multipleChoiceSubmitButton.addEventListener('click', async function() {
                 const main = document.querySelector('main');
                 const result = document.createElement('p');
 
-                result.textContent = `Your total score is ${(score/numberOfQuestions).toFixed(2)}%`;
+                result.textContent = `Your total score is ${(score/numberOfQuestions).toFixed(2) * 100}%`;
                 result.className = 'choice-result';
                 main.insertBefore(result, multipleChoiceSubmitButton);
             } else {
