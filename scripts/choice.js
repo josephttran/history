@@ -26,7 +26,7 @@ function getRandomObject(dataArr) {
 // An array of object
 async function getData() {
     try {
-        let response = await fetch('/data/choice.json');
+        let response = await fetch('data/choice.json');
         let data = await response.json();
         return data;
     } catch (err) {

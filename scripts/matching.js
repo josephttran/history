@@ -4,7 +4,7 @@ const numberOfMatch = 10;
 const matchSubmitButton = document.querySelector('.match-submit');
 
 function getMatchingData() {
-    return fetch('/data/match.json')
+    return fetch('data/match.json')
     .then(response => response.json())
     .catch((error) => console.error('Error:', error));
 }
